@@ -246,8 +246,15 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		4BB0D5CE2014BA8A0013E77A /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB0D5C92014BA890013E77A /* red.png */; };
+		4BB0D5CF2014BA8A0013E77A /* gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB0D5CA2014BA890013E77A /* gray.png */; };
+		4BB0D5D02014BA8A0013E77A /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB0D5CB2014BA890013E77A /* blue.png */; };
+		4BB0D5D12014BA8A0013E77A /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB0D5CC2014BA8A0013E77A /* green.png */; };
+		4BB0D5D22014BA8A0013E77A /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB0D5CD2014BA8A0013E77A /* yellow.png */; };
+		4BB0D5D42014DE590013E77A /* removeBlock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BB0D5D32014DE590013E77A /* removeBlock.mp3 */; };
 		4BF5C1E8201484EB001A7EBD /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BF5C1E6201484EB001A7EBD /* GameScene.cpp */; };
 		4BF5C1EA20148E7D001A7EBD /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BF5C1E920148E7B001A7EBD /* background.png */; };
+		4BF5C1EE20149433001A7EBD /* BlockSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BF5C1EC20149433001A7EBD /* BlockSprite.cpp */; };
 		7855E0E1153FEF240059DD9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7855E0DF153FEF240059DD9A /* Default.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
@@ -781,9 +788,18 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		37C62C0718E156AE00D16FC4 /* ExtensionExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionExport.h; sourceTree = "<group>"; };
+		4BB0D5C92014BA890013E77A /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
+		4BB0D5CA2014BA890013E77A /* gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray.png; sourceTree = "<group>"; };
+		4BB0D5CB2014BA890013E77A /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
+		4BB0D5CC2014BA8A0013E77A /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
+		4BB0D5CD2014BA8A0013E77A /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
+		4BB0D5D32014DE590013E77A /* removeBlock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = removeBlock.mp3; sourceTree = "<group>"; };
 		4BF5C1E6201484EB001A7EBD /* GameScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		4BF5C1E7201484EB001A7EBD /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		4BF5C1E920148E7B001A7EBD /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		4BF5C1EB2014939D001A7EBD /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		4BF5C1EC20149433001A7EBD /* BlockSprite.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BlockSprite.cpp; sourceTree = "<group>"; };
+		4BF5C1ED20149433001A7EBD /* BlockSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockSprite.h; sourceTree = "<group>"; };
 		7855E0DF153FEF240059DD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -1322,6 +1338,9 @@
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				4BF5C1E6201484EB001A7EBD /* GameScene.cpp */,
 				4BF5C1E7201484EB001A7EBD /* GameScene.h */,
+				4BF5C1EB2014939D001A7EBD /* Config.h */,
+				4BF5C1EC20149433001A7EBD /* BlockSprite.cpp */,
+				4BF5C1ED20149433001A7EBD /* BlockSprite.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -1933,6 +1952,12 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4BB0D5D32014DE590013E77A /* removeBlock.mp3 */,
+				4BB0D5CB2014BA890013E77A /* blue.png */,
+				4BB0D5CA2014BA890013E77A /* gray.png */,
+				4BB0D5CC2014BA8A0013E77A /* green.png */,
+				4BB0D5C92014BA890013E77A /* red.png */,
+				4BB0D5CD2014BA8A0013E77A /* yellow.png */,
 				4BF5C1E920148E7B001A7EBD /* background.png */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
 				1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */,
@@ -2022,12 +2047,18 @@
 				4BF5C1EA20148E7D001A7EBD /* background.png in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
+				4BB0D5CE2014BA8A0013E77A /* red.png in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
+				4BB0D5CF2014BA8A0013E77A /* gray.png in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
+				4BB0D5D42014DE590013E77A /* removeBlock.mp3 in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
 				D446FD6E16102124000ADA7B /* Default@2x.png in Resources */,
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
+				4BB0D5D02014BA8A0013E77A /* blue.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
+				4BB0D5D12014BA8A0013E77A /* green.png in Resources */,
+				4BB0D5D22014BA8A0013E77A /* yellow.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
 			);
@@ -2096,6 +2127,7 @@
 				15C0B553196D412F007F909D /* CCFrame.cpp in Sources */,
 				15C0B570196D412F007F909D /* UILayoutDefine.cpp in Sources */,
 				15A3D9221682F7D5002FB0C5 /* b2GearJoint.cpp in Sources */,
+				4BF5C1EE20149433001A7EBD /* BlockSprite.cpp in Sources */,
 				15A3D9231682F7D5002FB0C5 /* b2Joint.cpp in Sources */,
 				15A3D9241682F7D5002FB0C5 /* b2MouseJoint.cpp in Sources */,
 				15C0B55B196D412F007F909D /* CCDatas.cpp in Sources */,
