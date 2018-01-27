@@ -18,6 +18,8 @@
 # define MAX_BLOCK_Y 8
 
 # define REMOVING_TIME 0.1f
+# define MOVING_TIME 0.2f
+
 
 class GameScene : public cocos2d::CCLayer
 {
@@ -33,25 +35,48 @@ protected:
         kZOrderBackground,
         kZOrderBlock,
     };
+    
+    struct PositionIndex
+    {
+        PositionIndex(int x1, int y1)
+        {
+            x = x1;
+            y = y1;
+        }
 
-    // 背景に関するメンバ.
+        int x;
+        int y;
+    };
+
+    // 背景に関するメンバ変数.
     cocos2d::CCSprite* m_background;
-    void showBackGround();
 
-    // ブロックに関するメンバ.
+    // ブロックに関するメンバ変数.
     float m_blockSize;
     std::map<kBlock, std::list<int> > m_blockTags;
+    std::vector<kBlock> blockTypes;
+
+    // 初期化に関するメンバ関数.
     void initForVariables();
+    void showBackGround();
     void showBlock();
+
+    // ブロックのタッチ・削除に関するメンバ関数.
     cocos2d::CCPoint getPosition(int posIndexX, int posIndexY);
     int getTag(int posIndexX, int posIndexY);
-
-    // タッチイベントに関するメンバ.
     void getTouchBlockTag(cocos2d::CCPoint touchPoint, int &tag, kBlock &blockType);
     std::list<int> getSameColorBlockTags(int baseTag, kBlock blockType);
     void removeBlock(std::list<int> blockTags, kBlock blockType);
     bool hasSameColorBlock(std::list<int> blockTagList, int searchBlockTag);
     void removingBlock(cocos2d::CCNode* block);
+
+    // ブロックの移動に関するメンバ関数
+    PositionIndex getPositionIndex(int tag);
+    void setNewPosition1(int tag, PositionIndex posIndex);
+    void searchNewPosition1(std::list<int> blocks);
+    void moveBlock();
+    void movingBlockAnimation1(std::list<int> blocks);
+
 
 public:
     virtual bool init();
