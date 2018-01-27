@@ -361,6 +361,16 @@ void GameScene::movedBlocks()
     showLabel();
 
     m_animating = false;
+    
+    if (! existsSameBlock())
+    {
+        // ゲームオーバー表示.
+        CCSize bgSize = m_background->getContentSize();
+        CCSprite* gameOver = CCSprite::create(PNG_GAMEOVER);
+        gameOver->setPosition(ccp(bgSize.width / 2, bgSize.height * 0.8));
+        m_background->addChild(gameOver, kZOrderGameOver, kTagGameOver);
+        setTouchEnabled(false);
+    }
 }
 
 // x方向にブロックの位置をデクリメントする.
@@ -516,4 +526,27 @@ void GameScene::showLabel()
     {
         scoreLabel->setString(scoreStr);
     }
+}
+
+// 残りブロック数の判定.
+bool GameScene::existsSameBlock()
+{
+    // 全ブロックについて走査
+    vector<kBlock>::iterator it1 = blockTypes.begin();
+    while (it1 != blockTypes.end())
+    {
+        list<int>::iterator it2 = m_blockTags[*it1].begin();
+        while (it2 != m_blockTags[*it1].end())
+        {
+            if (getSameColorBlockTags(*it2, *it1).size() > 1)
+            {
+                // 隣り合うコマが見つかった時点でtrueを返す.
+                return true;
+            }
+            it2++;
+        }
+        it1++;
+    }
+    
+    return false;
 }

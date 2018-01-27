@@ -12,6 +12,7 @@
 #include "Config.h"
 
 # define PNG_BACKGROUND "background.png"
+# define PNG_GAMEOVER "gameover.png"
 # define MP3_REMOVE_BLOCK "removeBlock.mp3"
 
 # define FONT_RED "redFont.fnt"
@@ -40,6 +41,7 @@ protected:
         kTagGreenLabel,
         kTagGrayLabel,
         kTagScoreLabel,
+        kTagGameOver,
         kTagBaseBlock = 10000,
     };
     
@@ -48,6 +50,7 @@ protected:
         kZOrderBackground,
         kZOrderLabel,
         kZOrderBlock,
+        kZOrderGameOver,
     };
     
     struct PositionIndex
@@ -102,6 +105,7 @@ protected:
 
     void showLabel();
 
+    bool existsSameBlock();
 
 public:
     virtual bool init();

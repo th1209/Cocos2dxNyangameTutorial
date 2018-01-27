@@ -265,6 +265,7 @@
 		4BDFBDE0201C72320026A1F5 /* greenFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFBDD4201C72310026A1F5 /* greenFont.fnt */; };
 		4BDFBDE1201C72320026A1F5 /* redFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFBDD5201C72310026A1F5 /* redFont.fnt */; };
 		4BDFBDE2201C72320026A1F5 /* greenFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFBDD6201C72310026A1F5 /* greenFont.png */; };
+		4BDFBDE4201C7F160026A1F5 /* gameover.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFBDE3201C7F150026A1F5 /* gameover.png */; };
 		4BF5C1E8201484EB001A7EBD /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BF5C1E6201484EB001A7EBD /* GameScene.cpp */; };
 		4BF5C1EA20148E7D001A7EBD /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BF5C1E920148E7B001A7EBD /* background.png */; };
 		4BF5C1EE20149433001A7EBD /* BlockSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BF5C1EC20149433001A7EBD /* BlockSprite.cpp */; };
@@ -821,6 +822,7 @@
 		4BDFBDD4201C72310026A1F5 /* greenFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = greenFont.fnt; sourceTree = "<group>"; };
 		4BDFBDD5201C72310026A1F5 /* redFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = redFont.fnt; sourceTree = "<group>"; };
 		4BDFBDD6201C72310026A1F5 /* greenFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenFont.png; sourceTree = "<group>"; };
+		4BDFBDE3201C7F150026A1F5 /* gameover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameover.png; sourceTree = "<group>"; };
 		4BF5C1E6201484EB001A7EBD /* GameScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		4BF5C1E7201484EB001A7EBD /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		4BF5C1E920148E7B001A7EBD /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
@@ -1981,6 +1983,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4BDFBDE3201C7F150026A1F5 /* gameover.png */,
 				4BDFBDCC201C722F0026A1F5 /* blueFont.fnt */,
 				4BDFBDD3201C72310026A1F5 /* blueFont.png */,
 				4BDFBDCD201C72300026A1F5 /* grayFont.fnt */,
@@ -2084,6 +2087,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BDFBDE4201C7F160026A1F5 /* gameover.png in Resources */,
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
 				4BF5C1EA20148E7D001A7EBD /* background.png in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
