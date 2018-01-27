@@ -246,6 +246,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		4B25F960201628D500CFBBEF /* CCPlaySE.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B25F95F201628D500CFBBEF /* CCPlaySE.cpp */; };
 		4BB0D5CE2014BA8A0013E77A /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB0D5C92014BA890013E77A /* red.png */; };
 		4BB0D5CF2014BA8A0013E77A /* gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB0D5CA2014BA890013E77A /* gray.png */; };
 		4BB0D5D02014BA8A0013E77A /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB0D5CB2014BA890013E77A /* blue.png */; };
@@ -788,6 +789,8 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		37C62C0718E156AE00D16FC4 /* ExtensionExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionExport.h; sourceTree = "<group>"; };
+		4B25F95E201628C400CFBBEF /* CCPlaySE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCPlaySE.h; sourceTree = "<group>"; };
+		4B25F95F201628D500CFBBEF /* CCPlaySE.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CCPlaySE.cpp; sourceTree = "<group>"; };
 		4BB0D5C92014BA890013E77A /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
 		4BB0D5CA2014BA890013E77A /* gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray.png; sourceTree = "<group>"; };
 		4BB0D5CB2014BA890013E77A /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
@@ -1341,6 +1344,8 @@
 				4BF5C1EB2014939D001A7EBD /* Config.h */,
 				4BF5C1EC20149433001A7EBD /* BlockSprite.cpp */,
 				4BF5C1ED20149433001A7EBD /* BlockSprite.h */,
+				4B25F95E201628C400CFBBEF /* CCPlaySE.h */,
+				4B25F95F201628D500CFBBEF /* CCPlaySE.cpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -2144,6 +2149,7 @@
 				15A3D9951682F7F9002FB0C5 /* chipmunk.c in Sources */,
 				15A3D9971682F7F9002FB0C5 /* cpConstraint.c in Sources */,
 				15A3D9981682F7F9002FB0C5 /* cpDampedRotarySpring.c in Sources */,
+				4B25F960201628D500CFBBEF /* CCPlaySE.cpp in Sources */,
 				15A3D9991682F7F9002FB0C5 /* cpDampedSpring.c in Sources */,
 				15C0B552196D412F007F909D /* CCActionTimelineCache.cpp in Sources */,
 				15A3D99A1682F7F9002FB0C5 /* cpGearJoint.c in Sources */,

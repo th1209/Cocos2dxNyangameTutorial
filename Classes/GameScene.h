@@ -17,6 +17,8 @@
 # define MAX_BLOCK_X 8
 # define MAX_BLOCK_Y 8
 
+# define REMOVING_TIME 0.1f
+
 class GameScene : public cocos2d::CCLayer
 {
 protected:
@@ -49,6 +51,7 @@ protected:
     std::list<int> getSameColorBlockTags(int baseTag, kBlock blockType);
     void removeBlock(std::list<int> blockTags, kBlock blockType);
     bool hasSameColorBlock(std::list<int> blockTagList, int searchBlockTag);
+    void removingBlock(cocos2d::CCNode* block);
 
 public:
     virtual bool init();

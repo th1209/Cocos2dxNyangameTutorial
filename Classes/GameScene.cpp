@@ -8,6 +8,7 @@
 #include "GameScene.h"
 #include "SimpleAudioEngine.h"
 #include "BlockSprite.h"
+#include "CCPlaySE.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
@@ -192,19 +193,48 @@ list<int> GameScene::getSameColorBlockTags(int baseTag, kBlock blockType)
 
 void GameScene::removeBlock(list<int> blockTags, kBlock blockType)
 {
+    bool first = true;
+
     list<int>::iterator it = blockTags.begin();
     while(it != blockTags.end())
     {
+        // タグ配列から削除.
         m_blockTags[blockType].remove(*it);
-        
+
         CCNode* block = m_background->getChildByTag(*it);
         if (block)
         {
-            block->removeFromParentAndCleanup(true);
+            // ブロックの縮小アニメーション、実際のブロック削除アクションを作成.
+            CCScaleTo* scale = CCScaleTo::create(REMOVING_TIME, 0);
+            CCCallFuncN* func = CCCallFuncN::create(this, callfuncN_selector(GameScene::removingBlock));
+
+            // 各アニメーションを連結(順次再生).
+            CCFiniteTimeAction* sequence = CCSequence::create(scale, func, NULL);
+
+            CCFiniteTimeAction* action;
+            if (first)
+            {
+                // SE再生アニメーションを連結(並列再生).
+                CCPlaySE* playSe = CCPlaySE::create(MP3_REMOVE_BLOCK);
+                action = CCSpawn::create(sequence, playSe, NULL);
+
+                first = false;
+            }
+            else
+            {
+                action = sequence;
+            }
+
+            block->runAction(action);
         }
 
         it++;
     }
 
     SimpleAudioEngine::sharedEngine()->playEffect(MP3_REMOVE_BLOCK);
+}
+
+void GameScene::removingBlock(CCNode* block)
+{
+    block->removeFromParentAndCleanup(true);
 }
