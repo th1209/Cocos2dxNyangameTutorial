@@ -253,6 +253,18 @@
 		4BB0D5D12014BA8A0013E77A /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB0D5CC2014BA8A0013E77A /* green.png */; };
 		4BB0D5D22014BA8A0013E77A /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BB0D5CD2014BA8A0013E77A /* yellow.png */; };
 		4BB0D5D42014DE590013E77A /* removeBlock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BB0D5D32014DE590013E77A /* removeBlock.mp3 */; };
+		4BDFBDD7201C72320026A1F5 /* whiteFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFBDCB201C722F0026A1F5 /* whiteFont.fnt */; };
+		4BDFBDD8201C72320026A1F5 /* blueFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFBDCC201C722F0026A1F5 /* blueFont.fnt */; };
+		4BDFBDD9201C72320026A1F5 /* grayFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFBDCD201C72300026A1F5 /* grayFont.fnt */; };
+		4BDFBDDA201C72320026A1F5 /* yellowFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFBDCE201C72300026A1F5 /* yellowFont.png */; };
+		4BDFBDDB201C72320026A1F5 /* redFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFBDCF201C72300026A1F5 /* redFont.png */; };
+		4BDFBDDC201C72320026A1F5 /* whiteFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFBDD0201C72310026A1F5 /* whiteFont.png */; };
+		4BDFBDDD201C72320026A1F5 /* grayFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFBDD1201C72310026A1F5 /* grayFont.png */; };
+		4BDFBDDE201C72320026A1F5 /* yellowFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFBDD2201C72310026A1F5 /* yellowFont.fnt */; };
+		4BDFBDDF201C72320026A1F5 /* blueFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFBDD3201C72310026A1F5 /* blueFont.png */; };
+		4BDFBDE0201C72320026A1F5 /* greenFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFBDD4201C72310026A1F5 /* greenFont.fnt */; };
+		4BDFBDE1201C72320026A1F5 /* redFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFBDD5201C72310026A1F5 /* redFont.fnt */; };
+		4BDFBDE2201C72320026A1F5 /* greenFont.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFBDD6201C72310026A1F5 /* greenFont.png */; };
 		4BF5C1E8201484EB001A7EBD /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BF5C1E6201484EB001A7EBD /* GameScene.cpp */; };
 		4BF5C1EA20148E7D001A7EBD /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BF5C1E920148E7B001A7EBD /* background.png */; };
 		4BF5C1EE20149433001A7EBD /* BlockSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4BF5C1EC20149433001A7EBD /* BlockSprite.cpp */; };
@@ -797,6 +809,18 @@
 		4BB0D5CC2014BA8A0013E77A /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		4BB0D5CD2014BA8A0013E77A /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
 		4BB0D5D32014DE590013E77A /* removeBlock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = removeBlock.mp3; sourceTree = "<group>"; };
+		4BDFBDCB201C722F0026A1F5 /* whiteFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = whiteFont.fnt; sourceTree = "<group>"; };
+		4BDFBDCC201C722F0026A1F5 /* blueFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = blueFont.fnt; sourceTree = "<group>"; };
+		4BDFBDCD201C72300026A1F5 /* grayFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = grayFont.fnt; sourceTree = "<group>"; };
+		4BDFBDCE201C72300026A1F5 /* yellowFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowFont.png; sourceTree = "<group>"; };
+		4BDFBDCF201C72300026A1F5 /* redFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redFont.png; sourceTree = "<group>"; };
+		4BDFBDD0201C72310026A1F5 /* whiteFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteFont.png; sourceTree = "<group>"; };
+		4BDFBDD1201C72310026A1F5 /* grayFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayFont.png; sourceTree = "<group>"; };
+		4BDFBDD2201C72310026A1F5 /* yellowFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = yellowFont.fnt; sourceTree = "<group>"; };
+		4BDFBDD3201C72310026A1F5 /* blueFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueFont.png; sourceTree = "<group>"; };
+		4BDFBDD4201C72310026A1F5 /* greenFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = greenFont.fnt; sourceTree = "<group>"; };
+		4BDFBDD5201C72310026A1F5 /* redFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = redFont.fnt; sourceTree = "<group>"; };
+		4BDFBDD6201C72310026A1F5 /* greenFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenFont.png; sourceTree = "<group>"; };
 		4BF5C1E6201484EB001A7EBD /* GameScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		4BF5C1E7201484EB001A7EBD /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		4BF5C1E920148E7B001A7EBD /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
@@ -1957,6 +1981,18 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4BDFBDCC201C722F0026A1F5 /* blueFont.fnt */,
+				4BDFBDD3201C72310026A1F5 /* blueFont.png */,
+				4BDFBDCD201C72300026A1F5 /* grayFont.fnt */,
+				4BDFBDD1201C72310026A1F5 /* grayFont.png */,
+				4BDFBDD4201C72310026A1F5 /* greenFont.fnt */,
+				4BDFBDD6201C72310026A1F5 /* greenFont.png */,
+				4BDFBDD5201C72310026A1F5 /* redFont.fnt */,
+				4BDFBDCF201C72300026A1F5 /* redFont.png */,
+				4BDFBDCB201C722F0026A1F5 /* whiteFont.fnt */,
+				4BDFBDD0201C72310026A1F5 /* whiteFont.png */,
+				4BDFBDD2201C72310026A1F5 /* yellowFont.fnt */,
+				4BDFBDCE201C72300026A1F5 /* yellowFont.png */,
 				4BB0D5D32014DE590013E77A /* removeBlock.mp3 */,
 				4BB0D5CB2014BA890013E77A /* blue.png */,
 				4BB0D5CA2014BA890013E77A /* gray.png */,
@@ -2054,14 +2090,26 @@
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
 				4BB0D5CE2014BA8A0013E77A /* red.png in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
+				4BDFBDDA201C72320026A1F5 /* yellowFont.png in Resources */,
+				4BDFBDE1201C72320026A1F5 /* redFont.fnt in Resources */,
 				4BB0D5CF2014BA8A0013E77A /* gray.png in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
+				4BDFBDDB201C72320026A1F5 /* redFont.png in Resources */,
+				4BDFBDD7201C72320026A1F5 /* whiteFont.fnt in Resources */,
+				4BDFBDDF201C72320026A1F5 /* blueFont.png in Resources */,
+				4BDFBDDD201C72320026A1F5 /* grayFont.png in Resources */,
+				4BDFBDD8201C72320026A1F5 /* blueFont.fnt in Resources */,
+				4BDFBDD9201C72320026A1F5 /* grayFont.fnt in Resources */,
 				4BB0D5D42014DE590013E77A /* removeBlock.mp3 in Resources */,
+				4BDFBDDE201C72320026A1F5 /* yellowFont.fnt in Resources */,
+				4BDFBDE2201C72320026A1F5 /* greenFont.png in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
 				D446FD6E16102124000ADA7B /* Default@2x.png in Resources */,
+				4BDFBDDC201C72320026A1F5 /* whiteFont.png in Resources */,
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
 				4BB0D5D02014BA8A0013E77A /* blue.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
+				4BDFBDE0201C72320026A1F5 /* greenFont.fnt in Resources */,
 				4BB0D5D12014BA8A0013E77A /* green.png in Resources */,
 				4BB0D5D22014BA8A0013E77A /* yellow.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,

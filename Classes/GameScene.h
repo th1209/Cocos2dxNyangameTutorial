@@ -14,6 +14,13 @@
 # define PNG_BACKGROUND "background.png"
 # define MP3_REMOVE_BLOCK "removeBlock.mp3"
 
+# define FONT_RED "redFont.fnt"
+# define FONT_BLUE "blueFont.fnt"
+# define FONT_YELLOW "yellowFont.fnt"
+# define FONT_GREEN "greenFont.fnt"
+# define FONT_GRAY "grayFont.fnt"
+# define FONT_WHITE "whiteFont.fnt"
+
 # define MAX_BLOCK_X 8
 # define MAX_BLOCK_Y 8
 
@@ -27,12 +34,19 @@ protected:
     enum kTag
     {
         kTagBackground = 1,
+        kTagRedLabel,
+        kTagBlueLabel,
+        kTagYellowLabel,
+        kTagGreenLabel,
+        kTagGrayLabel,
+        kTagScoreLabel,
         kTagBaseBlock = 10000,
     };
     
     enum kZOrder
     {
         kZOrderBackground,
+        kZOrderLabel,
         kZOrderBlock,
     };
     
@@ -57,6 +71,8 @@ protected:
     std::vector<kBlock> blockTypes;
 
     bool m_animating;
+
+    int m_score;
 
     // 初期化に関するメンバ関数.
     void initForVariables();
@@ -83,6 +99,8 @@ protected:
     void setNewPosition2(int tag, PositionIndex posIndex);
     void searchNewPosition2();
     void movingBlockAnimation2();
+
+    void showLabel();
 
 
 public:

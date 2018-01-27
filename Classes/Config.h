@@ -19,4 +19,7 @@ enum kBlock
     kBlockCount,
 };
 
+// 可変引数マクロ.
+#define ccsf(...) CCString::createWithFormat(__VA_ARGS__)->getCString();
+
 #endif

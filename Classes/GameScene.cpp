@@ -38,6 +38,8 @@ bool GameScene::init()
     showBackGround();
     showBlock();
 
+    showLabel();
+
     // 効果音の事前読み込み.
     SimpleAudioEngine::sharedEngine()->preloadEffect(MP3_REMOVE_BLOCK);
 
@@ -68,6 +70,7 @@ void GameScene::initForVariables()
     blockTypes.push_back(kBlockGray);
 
     m_animating = false;
+    m_score = 0;
 }
 
 CCPoint GameScene::getPosition(int posIndexX, int posIndexY)
@@ -122,6 +125,8 @@ void GameScene::ccTouchEnded(cocos2d::CCTouch* pTouch, cocos2d::CCEvent* pEvent)
         list<int> sameColorBlockTags = getSameColorBlockTags(tag, blockType);
         if (sameColorBlockTags.size() > 1)
         {
+            m_score += pow(sameColorBlockTags.size() - 2, 2);
+
             m_animating = true;
 
             // 隣接するコマの削除.
@@ -352,6 +357,9 @@ void GameScene::movingBlockAnimation1(std::list<int> blocks)
 
 void GameScene::movedBlocks()
 {
+    // ラベルの更新.
+    showLabel();
+
     m_animating = false;
 }
 
@@ -450,4 +458,62 @@ void GameScene::movingBlockAnimation2()
     searchNewPosition2();
     moveBlock();
     scheduleOnce(schedule_selector(GameScene::movedBlocks), MOVING_TIME);
+}
+
+void GameScene::showLabel()
+{
+    // ブロック個数ラベル.
+    CCSize bgSize = m_background->getContentSize();
+    
+    int tagsForLabel[] = {
+        kTagRedLabel,
+        kTagBlueLabel,
+        kTagYellowLabel,
+        kTagGreenLabel,
+        kTagGrayLabel,
+    };
+    const char* fontNames[] = {
+        FONT_RED,
+        FONT_BLUE,
+        FONT_YELLOW,
+        FONT_GREEN,
+        FONT_GRAY,
+    };
+    float heightRate[] = {0.61, 0.51, 0.41, 0.31, 0.21};
+    
+    vector<kBlock>::iterator it = blockTypes.begin();
+    while (it != blockTypes.end())
+    {
+        int count = m_blockTags[*it].size();
+        const char* countStr = ccsf("%02d", count);
+        CCLabelBMFont* label = (CCLabelBMFont*)m_background->getChildByTag(tagsForLabel[*it]);
+
+        if (!label)
+        {
+            // ラベルの新規生成.
+            label = CCLabelBMFont::create(countStr, fontNames[*it]);
+            label->setPosition(ccp(bgSize.width * 0.78, bgSize.height * heightRate[*it]));
+            m_background->addChild(label, kZOrderLabel, tagsForLabel[*it]);
+        }
+        else
+        {
+            // ラベルの更新.
+            label->setString(countStr);
+        }
+        it++;
+    }
+
+    // スコアラベル.
+    const char* scoreStr = ccsf("%d", m_score);
+    CCLabelBMFont* scoreLabel = (CCLabelBMFont*)m_background->getChildByTag(kTagScoreLabel);
+    if (!scoreLabel)
+    {
+        scoreLabel = CCLabelBMFont::create(scoreStr, FONT_WHITE);
+        scoreLabel->setPosition(ccp(bgSize.width * 0.78, bgSize.height * 0.75));
+        m_background->addChild(scoreLabel, kZOrderLabel, kTagScoreLabel);
+    }
+    else
+    {
+        scoreLabel->setString(scoreStr);
+    }
 }
