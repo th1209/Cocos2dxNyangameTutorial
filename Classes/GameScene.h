@@ -28,6 +28,8 @@
 # define REMOVING_TIME 0.1f
 # define MOVING_TIME 0.2f
 
+# define KEY_HIGH_SCORE "HighScore"
+
 
 class GameScene : public cocos2d::CCLayer
 {
@@ -42,6 +44,7 @@ protected:
         kTagGrayLabel,
         kTagScoreLabel,
         kTagGameOver,
+        kTagHighScoreLabel,
         kTagBaseBlock = 10000,
     };
     
@@ -104,6 +107,9 @@ protected:
     void movingBlockAnimation2();
 
     void showLabel();
+
+    void saveHighScore();
+    void showHighScoreLabel();
 
     bool existsSameBlock();
 

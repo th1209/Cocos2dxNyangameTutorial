@@ -39,6 +39,7 @@ bool GameScene::init()
     showBlock();
 
     showLabel();
+    showHighScoreLabel();
 
     // 効果音の事前読み込み.
     SimpleAudioEngine::sharedEngine()->preloadEffect(MP3_REMOVE_BLOCK);
@@ -364,6 +365,8 @@ void GameScene::movedBlocks()
     
     if (! existsSameBlock())
     {
+        saveHighScore();
+
         // ゲームオーバー表示.
         CCSize bgSize = m_background->getContentSize();
         CCSprite* gameOver = CCSprite::create(PNG_GAMEOVER);
@@ -549,4 +552,37 @@ bool GameScene::existsSameBlock()
     }
     
     return false;
+}
+
+void GameScene::saveHighScore()
+{
+    CCUserDefault* userDefault = CCUserDefault::sharedUserDefault();
+    
+    int oldHighScore = userDefault->getIntegerForKey(KEY_HIGH_SCORE, 0);
+    if (oldHighScore < m_score)
+    {
+        userDefault->setIntegerForKey(KEY_HIGH_SCORE, m_score);
+        userDefault->flush();
+    }
+
+    showHighScoreLabel();
+}
+
+void GameScene::showHighScoreLabel()
+{
+    CCSize bgSize = m_background->getContentSize();
+    
+    int highScore = CCUserDefault::sharedUserDefault()->getIntegerForKey(KEY_HIGH_SCORE, 0);
+    const char* highScoreStr = ccsf("%d", highScore);
+    CCLabelBMFont* highScoreLabel = (CCLabelBMFont*)m_background->getChildByTag(kTagHighScoreLabel);
+    if (! highScoreLabel)
+    {
+        highScoreLabel = CCLabelBMFont::create(highScoreStr, FONT_WHITE);
+        highScoreLabel->setPosition(ccp(bgSize.width * 0.78, bgSize.height * 0.87));
+        m_background->addChild(highScoreLabel, kZOrderLabel, kTagScoreLabel);
+    }
+    else
+    {
+        highScoreLabel->setString(highScoreStr);
+    }
 }
