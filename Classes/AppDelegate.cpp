@@ -19,7 +19,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
     pDirector->setOpenGLView(pEGLView);
 	
     // turn on display FPS
+#if COCOS2D_DEBUG > 0
     pDirector->setDisplayStats(true);
+#else
+    pDirector->setDisplayStats(false);
+#endif
 
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
