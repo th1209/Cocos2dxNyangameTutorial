@@ -56,6 +56,8 @@ protected:
     std::map<kBlock, std::list<int> > m_blockTags;
     std::vector<kBlock> blockTypes;
 
+    bool m_animating;
+
     // 初期化に関するメンバ関数.
     void initForVariables();
     void showBackGround();
@@ -76,6 +78,11 @@ protected:
     void searchNewPosition1(std::list<int> blocks);
     void moveBlock();
     void movingBlockAnimation1(std::list<int> blocks);
+    void movedBlocks();
+    std::map<int, bool> getExistsBlockColumn();
+    void setNewPosition2(int tag, PositionIndex posIndex);
+    void searchNewPosition2();
+    void movingBlockAnimation2();
 
 
 public:

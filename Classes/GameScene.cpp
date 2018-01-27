@@ -66,6 +66,8 @@ void GameScene::initForVariables()
     blockTypes.push_back(kBlockYellow);
     blockTypes.push_back(kBlockGreen);
     blockTypes.push_back(kBlockGray);
+
+    m_animating = false;
 }
 
 CCPoint GameScene::getPosition(int posIndexX, int posIndexY)
@@ -103,7 +105,7 @@ void GameScene::showBlock()
 bool GameScene::ccTouchBegan(cocos2d::CCTouch* pTouch, cocos2d::CCEvent* pEvent)
 {
     // ccTouchBeganでtrueを返すと、他のタップイベント系メソッドが有効になる。
-    return true;
+    return !m_animating;
 }
 
 void GameScene::ccTouchEnded(cocos2d::CCTouch* pTouch, cocos2d::CCEvent* pEvent)
@@ -120,6 +122,8 @@ void GameScene::ccTouchEnded(cocos2d::CCTouch* pTouch, cocos2d::CCEvent* pEvent)
         list<int> sameColorBlockTags = getSameColorBlockTags(tag, blockType);
         if (sameColorBlockTags.size() > 1)
         {
+            m_animating = true;
+
             // 隣接するコマの削除.
             removeBlock(sameColorBlockTags, blockType);
 
@@ -343,4 +347,107 @@ void GameScene::movingBlockAnimation1(std::list<int> blocks)
 {
     searchNewPosition1(blocks);
     moveBlock();
+    scheduleOnce(schedule_selector(GameScene::movingBlockAnimation2), MOVING_TIME);
+}
+
+void GameScene::movedBlocks()
+{
+    m_animating = false;
+}
+
+// x方向にブロックの位置をデクリメントする.
+// tag: 移動対象のブロックのタグ
+// posIndex: 移動対象のブロックの位置(移動前)
+void GameScene::setNewPosition2(int tag, PositionIndex posIndex)
+{
+    BlockSprite* blockSprite = (BlockSprite*)m_background->getChildByTag(tag);
+    int nextPosX = blockSprite->getNextPosX();
+    if (nextPosX == -1)
+    {
+        nextPosX = posIndex.x;
+    }
+
+    blockSprite->setNextPos(--nextPosX, posIndex.y);
+}
+
+// keyに列番号、valueにブロックが1つでも存在するかを表すmapを返す.
+std::map<int, bool> GameScene::getExistsBlockColumn()
+{
+    // mapの初期化.
+    map<int, bool> xBlock;
+    for (int i = 0; i < MAX_BLOCK_X; i++) {
+        xBlock[i] = false;
+    }
+
+    vector<kBlock>::iterator itBlockType = blockTypes.begin();
+    while (itBlockType != blockTypes.end())
+    {
+        list<int>::iterator itTag = m_blockTags[*itBlockType].begin();
+        while (itTag != m_blockTags[*itBlockType].end())
+        {
+            // ブロックが1つでも存在する列はtrueにする.
+            xBlock[getPositionIndex(*itTag).x] = true;
+            itTag++;
+        }
+        itBlockType++;
+    }
+
+    return xBlock;
+}
+
+void GameScene::searchNewPosition2()
+{
+    map<int, bool> xBlock = getExistsBlockColumn();
+    
+    bool first = true;
+    
+    for (int i = MAX_BLOCK_X - 1 ; i >= 0; i--)
+    {
+        // 右の列から走査する.
+
+        if (xBlock[i])
+        {
+            // ブロックが存在する列.
+            
+            first = false;
+            continue;
+        }
+        else
+        {
+            // ブロックが存在しない列.
+
+            if (first)
+            {
+                // 1番右の列なら何もしない.
+                continue;
+            }
+            else
+            {
+                vector<kBlock>::iterator itBlockType = blockTypes.begin();
+                while (itBlockType != blockTypes.end())
+                {
+                    list<int>::iterator itTag = m_blockTags[*itBlockType].begin();
+                    while (itTag != m_blockTags[*itBlockType].end())
+                    {
+                        PositionIndex posIndex = getPositionIndex(*itTag);
+                        if (i < posIndex.x)
+                        {
+                            // この列より右にあるブロックなら位置を更新.
+                            setNewPosition2(*itTag, posIndex);
+                        }
+
+                        itTag++;
+                    }
+                    itBlockType++;
+                }
+            }
+        }
+    }
+}
+
+void GameScene::movingBlockAnimation2()
+{
+    searchNewPosition2();
+    moveBlock();
+    scheduleOnce(schedule_selector(GameScene::movedBlocks), MOVING_TIME);
 }
